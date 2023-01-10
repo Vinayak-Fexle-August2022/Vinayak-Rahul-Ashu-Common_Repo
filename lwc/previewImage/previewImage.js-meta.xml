@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>55.0</apiVersion>
+	<isExposed>false</isExposed>
+	<masterLabel>previewImage</masterLabel>
+	<description>component to preview selected image in larger factor.</description>
+</LightningComponentBundle>
