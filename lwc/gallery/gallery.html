@@ -1,0 +1,70 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Gallery" icon-name="">
+        <div >
+            <lightning-layout horizontal-align="center" vertical-align="end">
+
+                <lightning-combobox
+                    name="Select category" value={} placeholder="Select Category" options={options} onchange={handleChange} >
+                </lightning-combobox>
+
+                <lightning-layout-item class="slds-m-left_small" size="3">
+                    <lightning-input type="text"  placeholder="type for search" ></lightning-input>
+                </lightning-layout-item>
+                
+                <lightning-layout-item class="slds-m-left_small" size="3">
+                    <lightning-button label="Search" variant="brand" onclick={handleSearch}></lightning-button>
+                </lightning-layout-item>
+
+            </lightning-layout>
+        </div>
+        
+        <div class="slds-p-around_medium">
+            <lightning-layout vertical-align="start">
+    
+                <lightning-layout-item size="12">
+                    
+                    <div class="slds-box_small">
+                        
+                        <div class="slds-box slds-m-around_small">
+                            <c-preview-image></c-preview-image>
+                        </div>
+
+                    </div>
+                </lightning-layout-item>
+                
+            </lightning-layout>
+
+            <lightning-layout vertical-align="start">
+    
+                <lightning-layout-item size="12">
+                    
+                    <div class="slds-box_small">
+                        
+                        <div class="slds-box slds-m-around_small">
+                            <c-image-details></c-image-details>
+                        </div>
+
+                    </div>
+                </lightning-layout-item>
+                
+            </lightning-layout>
+
+            <lightning-layout vertical-align="start">
+    
+                <lightning-layout-item size="12">
+                    
+                    <div class="slds-box_small">
+                        
+                        <div class="slds-box slds-m-around_small">
+                            <c-search-result></c-search-result>
+                        </div>
+
+                    </div>
+                </lightning-layout-item>
+                
+            </lightning-layout>
+            
+        </div>
+
+    </lightning-card>
+</template>
