@@ -1,21 +1,12 @@
 <template>
-    <p>search result component</p>
-    <br/>
-    <div class="demo-only" style="width:30rem">
-        <article class="slds-tile slds-media">
-            <div class="slds-media__figure">
-            <span class="slds-avatar slds-avatar_circle slds-avatar_medium">
-                {picture}
-            </span>
-            </div>
-            <div class="slds-media__body">
-            <h3 class="slds-tile__title slds-truncate" title="Lexee L. Jackson">
-                <a href="#">{title}</a>
-            </h3>
-            <div class="slds-tile__detail" id="img">
-                {picture}
-            </div>
-            </div>
-        </article>
-    </div>
+    <lightning-card  variant="Narrow"  title="search result component">
+        <template if:true={state.rowsExistsToDisplay}>
+            <template for:each={pictures} for:item="pic">
+                <span class="slds-p-around_medium" key={pic.id}>
+                    <img onclick={handlePreview} alt="No Image Found" key={pic.id} src={pic.Picture__c} title={pic.Details__c} height="100px" width="100px"/>
+                </span>
+            </template>
+        </template>
+    </lightning-card>
+    
 </template>
