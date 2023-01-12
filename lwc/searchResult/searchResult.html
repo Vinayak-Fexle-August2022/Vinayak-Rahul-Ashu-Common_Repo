@@ -2,8 +2,9 @@
     <lightning-card  variant="Narrow"  title="search result component">
         <template if:true={state.rowsExistsToDisplay}>
             <template for:each={pictures} for:item="pic">
-                <span class="slds-p-around_medium" key={pic.id}>
-                    <img onclick={handlePreview} alt="No Image Found" key={pic.id} src={pic.Picture__c} title={pic.Details__c} height="100px" width="100px"/>
+                <span class="slds-p-around_medium" key={pic.Id}>
+                    <img onclick={handlePreview} alt="No Image Found" key={pic.Id} id={pic.Id} src={pic.Picture__c} title={pic.Details__c} height="100px" width="100px"/>
+                    <p id={pic.Id} hidden>{pic.Details__c}</p>
                 </span>
             </template>
         </template>

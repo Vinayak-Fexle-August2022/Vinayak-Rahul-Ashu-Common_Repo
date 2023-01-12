@@ -9,8 +9,6 @@ export default class SearchResult extends LightningElement
 {
     error;
     @track pictures;
-    // picture;
-    // title;
 
     @track state = 
     {
@@ -32,8 +30,11 @@ export default class SearchResult extends LightningElement
     {
         try
         {
-            let imgsrc = this.template.querySelector(e.target.nodeName).getAttribute('src');
-            var eventParam = {'imageSource': imgsrc};
+
+            let imgsrc = e.target.src;
+            let imgId = e.target.id;
+            let details = this.template.querySelector('p#'+imgId);
+            var eventParam = {'imageSource': imgsrc, imgDetails: details.textContent};
             fireEvent(this.pageRef, 'pubsubevent', eventParam);
         }
         catch(error)
@@ -47,11 +48,10 @@ export default class SearchResult extends LightningElement
             .then((result) => {
                 if(result.length > 0)
                 {
+                    console.log('@@@@@ result'+JSON.stringify(result));
                     this.state.rowsExistsToDisplay = true;
                     this.pictures = result ;
                     this.error = undefined;
-                    // this.picture = this.pictures[0].Picture__c;
-                    // this.title = this.pictures[0].Name;
                 }
                 else
                 {
